@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    <header>
+        <h1 class="display-4">
+            <%= title %>
+        </h1>
+    </header>
+    <div role="main">
+        <p><%= content %></p>
+        <form action="/hello/edit" method="post">
+            <input type="hidden" name="id" value="<%= mydata.id %>">
+            <div class="form-group">
+                <label for="name">NAME</label>
+                <input type="text" name="name" id="name" class="form-control" value="<%= mydata.name %>">
+            </div>
+            <div class="form-group">
+                <label for="mail">MAIL</label>
+                <td><input type="text" name="mail" id="mail" class="form-control" value="<%= mydata.mail %>"></td>
+            </div>
+            <div class="form-group">
+                <label for="age">AGE</label>
+                <td><input type="number" name="age" id="age" class="form-control" value="<%= mydata.age %>"></td>
+            </div>
+            <input type="submit" value="更新" class="btn btn-primary">
+        </form>
+    </div>
+</body>
+</html>

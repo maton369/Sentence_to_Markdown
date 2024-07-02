@@ -1,0 +1,14 @@
+<% if(item != null) { %>
+    <tr class="row">
+        <th class="col-2">
+            <a href="/boards/home/<%= item.account.name %>/<%= item.accountId %>/0">
+            <%= item.account.name %></a>
+        </th>
+        <td class="col-7"><%= item.message %></td>
+        <% 
+        var d = new Date(item.createAt);
+        var dstr = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate() + " " + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds(); 
+        %>
+        <td class="col-3"><%= dstr %></td>
+    </tr>
+<% } %>
